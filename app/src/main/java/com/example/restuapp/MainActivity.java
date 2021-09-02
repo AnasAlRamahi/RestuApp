@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button addDishButton = findViewById(R.id.addDishButton);
         addDishButton.setOnClickListener(view -> {
-            Intent goToAddDish = new Intent(MainActivity.this, addDishActivity.class);
+            Intent goToAddDish = new Intent(MainActivity.this, AddDishActivity.class);
             startActivity(goToAddDish);
         });
 
