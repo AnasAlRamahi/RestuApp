@@ -32,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
 //        DishItems.add(new Dish("THIRD",3,"@#"));
 //        DishItems.add(new Dish("FOURTH",3,"@#"));
 
-        DishDatabase db = Room.databaseBuilder(getApplicationContext(), DishDatabase.class, "MenuActivity").allowMainThreadQueries().build();
+        DishDatabase db = Room.databaseBuilder(getApplicationContext(), DishDatabase.class, "DB").allowMainThreadQueries().build();
         DishDao dishDao = db.dishDao();
 
         List<Dish> DishItems = dishDao.getAll();

@@ -25,7 +25,7 @@ public class AddDishActivity extends AppCompatActivity {
 
         Button submitButton = findViewById(R.id.submitButton);
         submitButton.setOnClickListener(view -> {
-            DishDatabase db = Room.databaseBuilder(getApplicationContext(), DishDatabase.class, "MenuActivity").allowMainThreadQueries().build();
+            DishDatabase db = Room.databaseBuilder(getApplicationContext(), DishDatabase.class, "DB").allowMainThreadQueries().build();
             DishDao dishDao = db.dishDao();
 
             TextView dishName = findViewById(R.id.dishNameEntery);
@@ -36,8 +36,8 @@ public class AddDishActivity extends AppCompatActivity {
             String ingreds = ingredients.getText().toString();
             dishDao.insert(new Dish(name,price,ingreds));
 
-//            Intent goToAddDish = new Intent(AddDishActivity.this, MainActivity.class);
-//            startActivity(goToAddDish);
+            Intent goToAddDish = new Intent(AddDishActivity.this, MainActivity.class);
+            startActivity(goToAddDish);
         });
 
     }

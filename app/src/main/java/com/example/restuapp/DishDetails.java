@@ -18,7 +18,7 @@ public class DishDetails extends AppCompatActivity {
         backToMainButton.setOnClickListener(view -> {
             Intent backToMain = new Intent(DishDetails.this, MainActivity.class);
             startActivity(backToMain);
-
+        });
 
             Intent intent = getIntent();
             String dishName = intent.getExtras().getString("name");
@@ -31,7 +31,5 @@ public class DishDetails extends AppCompatActivity {
             price.setText(Integer.toString(dishPrice));
             TextView ingreds = findViewById(R.id.ingredientsView);
             ingreds.setText(ingredients);
-        });
-
     }
 }
