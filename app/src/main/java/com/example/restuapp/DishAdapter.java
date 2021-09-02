@@ -27,7 +27,7 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
         public Dish dish;
         View itemView;
 
-        public DishViewHolder(@NonNull @NotNull View itemView) {
+        public DishViewHolder(@NonNull View itemView) {
             super(itemView);
             this.itemView = itemView;
             itemView.setOnClickListener(view -> {
@@ -41,17 +41,16 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
         }
     }
 
-    @NonNull
     @NotNull
     @Override
-    public DishAdapter.DishViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public DishAdapter.DishViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_dish,parent, false);
         DishViewHolder dishViewHolder = new DishViewHolder(view);
         return dishViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull DishAdapter.DishViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DishAdapter.DishViewHolder holder, int position) {
         holder.dish = dishItems.get(position);
         TextView dishName = holder.itemView.findViewById(R.id.dishNameView);
         dishName.setText(holder.dish.dishName);
